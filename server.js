@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const connectToDB = require('./db/mongodb');
-const userRouter = require('./routes/userRoutes');
+const userRouter = require('./routes/authRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
 const app = express();
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use("/ping",(req,res)=>{
 });
 
 
-app.use("/user",userRouter);
+app.use("/api/auth",userRouter);
 
 app.use("/api/inventory",inventoryRoutes);
 connectToDB().then(()=>{
