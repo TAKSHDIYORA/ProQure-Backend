@@ -14,6 +14,7 @@ const startServer = async () => {
             `ProQure server running on port ${PORT}`
         );
     });
+
 };
 
 startServer();
