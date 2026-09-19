@@ -9,6 +9,7 @@ import connectionRoutes from "./modules/connection/connection.routes";
 import procurementRoutes from "./modules/procurement/pr.routes";
 import rfqRoutes from "./modules/procurement/rfq.routes";
 import quotationRoutes from "./modules/procurement/quotation.routes";
+import poRoutes from "./modules/procurement/po.routes";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/api/connections", connectionRoutes);
 app.use("/api/procurement/pr", procurementRoutes);
 app.use("/api/procurement/rfqs", rfqRoutes);
 app.use("/api/procurement/quotations", quotationRoutes);
+app.use("/api/procurement/pos", poRoutes);
 
 app.get("/", (_req, res) => {
   res.json({
